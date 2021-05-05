@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -8,12 +9,13 @@
 	<!-- LINK -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<!-- <link rel="stylesheet" href="../css/index.css"> -->
-    <link rel="stylesheet" href="{{ asset('css/') }}/index.css">
+	<link rel="stylesheet" href="{{ asset('css/') }}/index.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 	<title>Woka: Best Worker for Best Service</title>
 </head>
+
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light navbar-clr">
@@ -42,17 +44,18 @@
 						<div class="modal-content">
 							<div class="modal-body">
 								<form method="post" action="{{ url('/') }}">
-								@csrf
+									@csrf
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									<h2 class="headT mb-4">Masuk</h2>
 									<div class="form-outline mb-4 pe-5 ps-5">
-										<input type="text" class="form-control" placeholder="Email"/>
+										<input type="text" class="form-control" placeholder="Email" name="email" />
 									</div>
 									<div class="form-outline mb-4 pe-5 ps-5">
-										<input type="password" class="form-control" placeholder="Kata Sandi"/>
+										<input type="password" class="form-control" placeholder="Kata Sandi" name="password" />
 									</div>
 									<div class="form-outline pe-5 ps-5">
 										<button type="submit" class="btn mb-4 btn-gabung">Lanjut</button>
+										<!-- blm ada di database -->
 										<input type="checkbox" name="" id=""> Ingat Saya
 										<a href="#" class="float-end">Lupa Kata Sandi?</a>
 									</div>
@@ -72,16 +75,17 @@
 						<div class="modal-content">
 							<div class="modal-body">
 								<form>
+									@csrf
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									<h2 class="headT mb-4">Daftar</h2>
 									<div class="form-outline mb-4 pe-5 ps-5">
-										<input type="name" class="form-control" placeholder="Nama"/>
+										<input type="name" class="form-control" placeholder="Nama" name="nama" />
 									</div>
 									<div class="form-outline mb-4 pe-5 ps-5">
-										<input type="email" class="form-control" placeholder="Email"/>
+										<input type="email" class="form-control" placeholder="Email" name="email" />
 									</div>
 									<div class="form-outline mb-2 pe-5 ps-5">
-										<input type="password" class="form-control" placeholder="Kata Sandi"/>
+										<input type="password" class="form-control" placeholder="Kata Sandi" name="password" />
 									</div>
 									<div class="form-outline mb-4 pe-5 ps-5">
 										<p class="mb-4" style="font-size: 13px;">8 karakter atau lebih. Kombinasi huruf besar dan kecil dan angka.</p>
@@ -109,10 +113,11 @@
 				<div class="card">
 					<div class="card-body">
 						<form action="{{ url('/search') }}">
-							<input type="text" class="search-box" placeholder="Temukan Jasa" name="namaJasa" id="namaJasa">
+							@csrf
+							<input type="text" class="search-box" placeholder="Temukan Jasa" name="nama" id="namaJasa">
 							<button class="btn btn-primary" type="submit">Cari Jasa</button>
 						</form>
-				  	</div>
+					</div>
 				</div>
 				<b class="slogan">Simple and Trusted</b>
 				<p>Temukan jasa tukang terbaik dan terpercaya dengan mudah, sesuai keinginan Anda</p>
@@ -132,16 +137,17 @@
 	<script>
 		var myModal = document.getElementById('myModal')
 		var myInput = document.getElementById('myInput')
-		myModal.addEventListener('shown.bs.modal', function () {
-		myInput.focus()
+		myModal.addEventListener('shown.bs.modal', function() {
+			myInput.focus()
 		})
 
 		var myModal1 = document.getElementById('myModal1')
 		var myInput1 = document.getElementById('myInput1')
-		myModal1.addEventListener('shown.bs.modal', function () {
-		myInput1.focus()
+		myModal1.addEventListener('shown.bs.modal', function() {
+			myInput1.focus()
 		})
-	</script>	
+	</script>
 
 </body>
+
 </html>

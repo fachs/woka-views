@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -13,6 +14,7 @@
 
 	<title>Woka: Best Worker for Best Service</title>
 </head>
+
 <body>
 
 	<nav class="navbar navbar-light navbar-clr">
@@ -71,6 +73,7 @@
 					Sudah Siap Memesan?
 					<br>
 					<form>
+						@csrf
 						<button type="submit" formaction="{{ url('/search') }}" class="btn btn-outline-dark mt-4">Pesan Sekarang</button>
 					</form>
 				</h3>
@@ -78,15 +81,16 @@
 		</div>
 
 		<div class="footer">
-		<p>
-			<img src="{{ asset('img/') }}/logofooter.png" width="25px" alt="">
-			Woka &emsp;&emsp;
-			@ 2021, PT. Woka.
-		</p>
+			<p>
+				<img src="{{ asset('img/') }}/logofooter.png" width="25px" alt="">
+				Woka &emsp;&emsp;
+				@ 2021, PT. Woka.
+			</p>
 		</div>
 	</div>
 
 	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,6 +1,7 @@
 <!doctype html>
-	<html lang="en">
-	<head>
+<html lang="en">
+
+<head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,17 +16,19 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 	<title>Woka: Best Worker for Best Service</title>
-	</head>
-	<body>
+</head>
+
+<body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid ms-3">
 			<a class="navbar-brand" style="color: #11BCC7;" href="{{ url('/') }}"> <img src="{{ asset('img/') }}/logo.png" width="20%" alt=""> <b>Woka</b></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<form class="d-flex">
+					@csrf
 					<input class="form-control me-2" type="search" placeholder="Temukan Jasa" aria-label="Search" style="width: 550px">
 				</form>
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -48,8 +51,8 @@
 	</nav>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light bar">
 		<div class="container-fluid">
-		<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent2">
 				<ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="text-align: center; font-size: 0.9rem">
@@ -81,9 +84,9 @@
 			</div>
 		</div>
 	</nav>
-    @yield('container')
+	@yield('container')
 
-    <div class="bar mt-5"></div>
+	<div class="bar mt-5"></div>
 	<div class="footer">
 		<p>
 			<img src="{{ asset('img/') }}/logofooter.png" width="25px" alt="">
@@ -94,5 +97,6 @@
 
 	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-	</body>
-	</html>
+</body>
+
+</html>
