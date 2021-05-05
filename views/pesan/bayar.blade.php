@@ -1,18 +1,20 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ asset('css/') }}/checkout.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ asset('css/') }}/checkout.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-<title>Checkout</title>
+	<title>Checkout</title>
 </head>
+
 <body>
 
 	<nav class="navbar navbar-light navbar-clr">
@@ -28,6 +30,7 @@
 				<div class="card mt-4">
 					<div class="card-body">
 						<div class="form-check mt-3">
+							<!-- blm ada di database, tabelnya -->
 							<input class="form-check-input" type="radio" name="bayar" id="bayar1" value="KartuDebit">
 							<label class="form-check-label" for="bayar1">
 								Kartu Debit
@@ -37,30 +40,34 @@
 							<div class="row">
 								<div class="col-lg col-sm-12">
 									<label for="">Nomor Kartu</label>
+									<!-- blm ada di database, tabelnya -->
 									<input type="text" class="form-control">
 								</div>
 								<div class="col-lg-3 col-sm-12">
 									<label for="">Expiration Date</label>
+									<!-- blm ada di database, tabelnya -->
 									<input type="text" class="form-control">
 								</div>
 								<div class="col-lg-3 col-sm-12">
 									<label for="">Security Code</label>
+									<!-- blm ada di database, tabelnya -->
 									<input type="text" class="form-control">
 								</div>
 							</div>
 							<div class="row mt-3">
 								<div class="col-lg col-sm-12">
 									<label for="">Nama Depan</label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" name="fname">
 								</div>
 								<div class="col-lg col-sm-12">
 									<label for="">Nama Belakang</label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" name="lname">
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-check mt-3">
+							<!-- blm ada di database, tabelnya -->
 							<input class="form-check-input" type="radio" name="bayar" id="bayar2" value="Paypal">
 							<label class="form-check-label" for="bayar2">
 								Paypal
@@ -84,7 +91,7 @@
 							<label for="">Indomaret Code</label>
 							<input type="text" class="form-control" placeholder="IND18X3K680L" disabled>
 						</div>
-						
+
 						<div class="form-check mt-3">
 							<input class="form-check-input" type="radio" name="bayar" id="bayar4" value="Alfamart">
 							<label class="form-check-label" for="bayar4">
@@ -164,7 +171,7 @@
 							</table>
 							<div>
 								<form method="post">
-                                    @csrf
+									@csrf
 									<button type="submit" formaction="{{ url('pesan/selesai') }}" class="btn btn-pesan mt-3 flex">Konfirmasi & Bayar</button>
 								</form>
 								<p style="text-align: center; font-size: 10px;" class="mt-3">SSL Security Payment</p>
@@ -176,18 +183,19 @@
 		</div>
 	</div>
 
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-$(document).ready(function(){
-    $('input[type="radio"]').click(function(){
-        var inputValue = $(this).attr("value");
-        var targetBox = $("." + inputValue);
-        $(".box").not(targetBox).hide();
-        $(targetBox).show();
-    });
-});
-</script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('input[type="radio"]').click(function() {
+				var inputValue = $(this).attr("value");
+				var targetBox = $("." + inputValue);
+				$(".box").not(targetBox).hide();
+				$(targetBox).show();
+			});
+		});
+	</script>
 </body>
+
 </html>
